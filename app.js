@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000 ;
 
 // MongoDB connection
 mongoose.set('strictQuery', true);
@@ -22,4 +22,4 @@ app.get('/',(req, res) => {
     res.status(200).json({message: 'SUCCESS'});
 })
 // Start server
-app.listen(process.env.PORT || PORT, ()=> console.log(`Listening to http://localhost:${PORT}`));
+app.listen(PORT, ()=> console.log(`Listening to http://localhost:${PORT}`));
