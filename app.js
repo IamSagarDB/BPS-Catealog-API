@@ -22,4 +22,4 @@ app.get('/',(req, res) => {
     res.status(200).json({message: 'SUCCESS'});
 })
 // Start server
-app.listen(PORT, ()=> console.log(`Listening to http://localhost:${PORT}`));
+app.listen(process.env.PORT || PORT, ()=> console.log(`Listening to http://localhost:${PORT}`));
